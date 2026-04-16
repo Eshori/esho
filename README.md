@@ -1,15 +1,5 @@
 # esho
 Kaelith is Home 
-<head>
-  <title>My First Website</title>
-  <style>
-    body { font-family: Arial; background: #f5f5f5; padding: 20px; }
-    h1 { color: #d85a30; }
-    button { background: #1d9e75; color: white; padding: 10px 20px;
-             border: none; border-radius: 6px; cursor: pointer; }
-  </style>
-</head>
-<body>
 
   <h1>Hello, World!</h1>
   <p>Welcome to my first website.</p>
