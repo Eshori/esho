@@ -1,7 +1,5 @@
 # esho
 Kaelith is Home 
-<!DOCTYPE html>
-<html>
 <head>
   <title>My First Website</title>
   <style>
