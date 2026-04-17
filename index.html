@@ -30,18 +30,29 @@
             --accent: #58a6ff;
             --border: #30363d;
         }
+
         body {
             margin:0;
             font-family: system-ui, sans-serif;
             background:var(--bg);
             color:var(--text);
         }
+
+        /* ✅ LOGO FIX */
+        .logo {
+            width: 90px;
+            height: auto;
+            display: block;
+            margin: 0 auto 10px;
+        }
+
         header {
             background:#0a0e14;
             padding:2rem 1rem;
             text-align:center;
             border-bottom:1px solid var(--border);
         }
+
         .nav {
             display:flex;
             flex-wrap:wrap;
@@ -51,6 +62,7 @@
             background:var(--card);
             border-bottom:1px solid var(--border);
         }
+
         .nav-item {
             background:#21262d;
             color:var(--text);
@@ -60,15 +72,18 @@
             border:1px solid var(--border);
             transition:0.2s;
         }
+
         .nav-item:hover {
             background:var(--accent);
             color:#0d1117;
         }
+
         .container {
             max-width:880px;
             margin:2.5rem auto;
             padding:0 1rem;
         }
+
         .section {
             background:var(--card);
             border:1px solid var(--border);
@@ -76,6 +91,7 @@
             padding:2rem;
             margin-bottom:2rem;
         }
+
         footer {
             text-align:center;
             padding:3rem 1rem;
@@ -87,9 +103,7 @@
 <body>
 
 <header>
-    <img src="images/esho.png" 
-             alt="Eshori" 
-             class="logo">
+    <img src="images/esho.png" alt="Eshori" class="logo">
     <h2>Tech Projects • Android Mods • Software Tools</h2>
     <p>Self-hosted enthusiast • Tech tinkerer</p>
 </header>
