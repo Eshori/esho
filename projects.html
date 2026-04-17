@@ -38,7 +38,6 @@
             font-size: 1.1rem;
         }
 
-        /* Minimalist Category Menu / Folders */
         .nav {
             display: flex;
             flex-wrap: wrap;
@@ -117,17 +116,70 @@
             font-size: 0.95rem;
         }
 
-        .screenshot {
+        /* ── Screenshot horizontal scroll ── */
+        .screenshots-section h3 {
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+
+        .horizontal-scroll {
+            display: flex;
+            gap: 1rem;
+            overflow-x: auto;
+            padding-bottom: 0.75rem;
+            /* smooth scrolling on iOS */
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: thin;
+            scrollbar-color: var(--border) transparent;
+        }
+        .horizontal-scroll::-webkit-scrollbar {
+            height: 6px;
+        }
+        .horizontal-scroll::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .horizontal-scroll::-webkit-scrollbar-thumb {
+            background: var(--border);
+            border-radius: 3px;
+        }
+
+        .screenshot-card {
+            flex: 0 0 auto;
+            width: 220px;
             background: #21262d;
-            height: 380px;
-            border-radius: 10px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+            text-align: center;
+        }
+        .screenshot-card img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            display: block;
+            /* grey placeholder while loading */
+            background: #2d333b;
+        }
+        /* Show alt text nicely when image fails */
+        .screenshot-card img::after {
+            content: attr(alt);
             display: flex;
             align-items: center;
             justify-content: center;
+            width: 100%;
+            height: 160px;
+            background: #2d333b;
             color: #8b949e;
+            font-size: 0.8rem;
             font-style: italic;
-            border: 1px dashed var(--border);
-            margin: 1rem 0;
+            padding: 0.5rem;
+            box-sizing: border-box;
+        }
+        .screenshot-card p {
+            margin: 0;
+            padding: 0.6rem 0.5rem;
+            font-size: 0.85rem;
+            color: #8b949e;
         }
     </style>
 </head>
@@ -138,7 +190,6 @@
         <p class="tagline">v1.6.15.2 • Android • March 2026</p>
     </header>
 
-    <!-- Simple Category / Folder Menu -->
     <div class="nav">
         <a href="index.html" class="nav-item">🏠 Home</a>
         <a href="https://drive.google.com/uc?export=download&id=1u9Q8kD-2XDoRFEY_uW06KMqfX4QMmmcG" class="nav-item">📥 Download APK</a>
@@ -167,57 +218,56 @@
         <div class="section install-section">
             <h2>📲 Get the Game</h2>
             <a href="https://play.google.com/store/apps/details?id=com.chucklefish.stardewvalley" target="_blank" class="btn">Official on Google Play</a>
-            <a href="https://drive.google.com/uc?export=download&id=1u9Q8kD-2XDoRFEY_uW06KMqfX4QMmmcG" target="_blank" class="btn">Download (v1.6.15.2) 288 MiB </a>
+            <a href="https://drive.google.com/uc?export=download&id=1u9Q8kD-2XDoRFEY_uW06KMqfX4QMmmcG" target="_blank" class="btn">Download (v1.6.15.2) 288 MiB</a>
         </div>
 
         <div class="section">
-         <!-- Horizontal Scroll Screenshot Cards -->
-        <div class="screenshots-section">
-          <h3>📸 Game Screenshots</h3>
-          <div class="horizontal-scroll">
-            
-            <div class="screenshot-card">
-              <img src="image/ssdew/one.png" alt="Build a Perfect Home">
-              <p>Build Your Perfect Home</p></p>
-            </div>
+            <div class="screenshots-section">
+                <h3>📸 Game Screenshots</h3>
+                <div class="horizontal-scroll">
 
-            <div class="screenshot-card">
-              <img src="image/ssdew/two.png" alt="Explore new Farms">
-              <p>Settle down and build your own farm</p>
-            </div>
+                    <div class="screenshot-card">
+                        <img src="images/ssdew/one.png" alt="Build a Perfect Home">
+                        <p>Build Your Perfect Home</p>
+                    </div>
 
-            <div class="screenshot-card">
-              <img src="image/ssdew/three.png" alt="Night Market">
-              <p>Night Market Events</p>
-            </div>
+                    <div class="screenshot-card">
+                        <img src="images/ssdew/two.png" alt="Explore new Farms">
+                        <p>Settle down and build your own farm</p>
+                    </div>
 
-            <div class="screenshot-card">
-              <img src="image/ssdew/four.png" alt="Feast">
-              <p>Sow the seeds of friendship</p>
-            </div>
+                    <div class="screenshot-card">
+                        <img src="images/ssdew/three.png" alt="Night Market">
+                        <p>Night Market Events</p>
+                    </div>
 
-            <div class="screenshot-card">
-              <img src="image/ssdew/five.png" alt="Make that special someone">
-              <p>Chose your special partner</p>
-            </div>
+                    <div class="screenshot-card">
+                        <img src="images/ssdew/four.png" alt="Feast">
+                        <p>Sow the seeds of friendship</p>
+                    </div>
 
-            <div class="screenshot-card">
-              <img src="image/ssdew/six.png" alt="Farm Animals">
-              <p>Raise happy animals</p>
-            </div>
-            
-            <div class="screenshot-card">
-              <img src="image/ssdew/seven.png" alt="Start a Perfect Family">
-              <p>Start a Family</p>
-            </div>
+                    <div class="screenshot-card">
+                        <img src="images/ssdew/five.png" alt="Make that special someone">
+                        <p>Chose your special partner</p>
+                    </div>
 
-            <div class="screenshot-card">
-              <img src="image/ssdew/eight.png" alt="Venture Into Unknown">
-              <p>Venture into unknown Depths</p>
-            </div>
+                    <div class="screenshot-card">
+                        <img src="images/ssdew/six.png" alt="Farm Animals">
+                        <p>Raise happy animals</p>
+                    </div>
 
-          </div>
-        </div>
+                    <div class="screenshot-card">
+                        <img src="images/ssdew/seven.png" alt="Start a Perfect Family">
+                        <p>Start a Family</p>
+                    </div>
+
+                    <div class="screenshot-card">
+                        <img src="images/ssdew/eight.png" alt="Venture Into Unknown">
+                        <p>Venture into unknown Depths</p>
+                    </div>
+
+                </div>
+            </div>
         </div>
 
         <div class="section">
@@ -225,7 +275,7 @@
             <ul>
                 <li><strong>Android Version:</strong> 5.0 (Lollipop) or higher</li>
                 <li><strong>RAM:</strong> 2 GB minimum (3 GB+ recommended)</li>
-                <li><strong>Storage:</strong> \~400 MB install + extra for saves</li>
+                <li><strong>Storage:</strong> ~400 MB install + extra for saves</li>
                 <li><strong>Processor:</strong> Quad-core or better</li>
                 <li>Internet not required for playing</li>
             </ul>
