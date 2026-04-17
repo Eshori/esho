@@ -17,45 +17,47 @@
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             background: var(--bg);
             color: var(--text);
-            line-height: 1.6;
+            line-height: 1.55;
         }
         header {
             background: #0a0e14;
-            padding: 1.5rem 1rem;
+            padding: 1.2rem 1rem;
             border-bottom: 1px solid var(--border);
             text-align: center;
         }
         .logo {
-            font-size: 2.6rem;
-            margin-bottom: 0.3rem;
+            height: 85px;           /* Adjust size if needed */
+            margin-bottom: 0.4rem;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
         }
         h1 {
             margin: 0;
-            font-size: 1.8rem;
+            font-size: 1.75rem;
         }
         .tagline {
             color: #8b949e;
-            font-size: 1.1rem;
+            font-size: 1rem;
         }
 
         .nav {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 12px;
-            padding: 1.5rem 1rem;
+            gap: 10px;
+            padding: 1.1rem 1rem;
             background: var(--card);
             border-bottom: 1px solid var(--border);
         }
         .nav-item {
             background: #21262d;
             color: var(--text);
-            padding: 10px 20px;
+            padding: 9px 18px;
             border-radius: 8px;
             text-decoration: none;
             font-weight: 500;
+            font-size: 0.95rem;
             border: 1px solid var(--border);
-            transition: all 0.2s;
+            transition: all 0.2s ease;
         }
         .nav-item:hover {
             background: var(--accent);
@@ -65,7 +67,7 @@
 
         .container {
             max-width: 920px;
-            margin: 2rem auto;
+            margin: 1.8rem auto;
             padding: 0 1rem;
         }
 
@@ -73,32 +75,42 @@
             background: var(--card);
             border: 1px solid var(--border);
             border-radius: 10px;
-            padding: 2rem;
-            margin-bottom: 2rem;
+            padding: 1.6rem;
+            margin-bottom: 1.8rem;
         }
 
+        /* Compact Features with Only Bottom Line */
         .features {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 1.2rem;
+            gap: 0;
         }
         .feature {
-            padding: 1rem;
+            padding: 14px 16px;
             background: #21262d;
-            border-radius: 6px;
-            border-left: 4px solid var(--accent);
+            border-bottom: 1px solid var(--border);
+            font-size: 0.96rem;
+            transition: all 0.25s ease;
+        }
+        .feature:last-child {
+            border-bottom: none;
+        }
+        .feature:hover {
+            background: #262c34;
+            padding-left: 20px;
         }
 
         .btn {
             display: inline-block;
             background: var(--accent);
             color: #0d1117;
-            padding: 14px 28px;
+            padding: 13px 26px;
             border-radius: 8px;
             text-decoration: none;
             font-weight: bold;
-            margin: 0.5rem 0.3rem;
-            transition: 0.2s;
+            font-size: 0.97rem;
+            margin: 0.4rem 0.3rem;
+            transition: all 0.25s ease;
         }
         .btn:hover {
             background: #7bbcff;
@@ -109,83 +121,70 @@
             text-align: center;
         }
 
-        footer {
-            text-align: center;
-            padding: 3rem 1rem;
-            color: #8b949e;
-            font-size: 0.95rem;
-        }
-
-        /* ── Screenshot horizontal scroll ── */
+        /* Smooth Horizontal Scroll Screenshots */
         .screenshots-section h3 {
-            margin-top: 0;
-            margin-bottom: 1rem;
+            margin: 0 0 1rem 0;
+            font-size: 1.35rem;
         }
-
         .horizontal-scroll {
             display: flex;
-            gap: 1rem;
+            gap: 14px;
             overflow-x: auto;
-            padding-bottom: 0.75rem;
-            /* smooth scrolling on iOS */
+            padding-bottom: 12px;
             -webkit-overflow-scrolling: touch;
             scrollbar-width: thin;
-            scrollbar-color: var(--border) transparent;
+            scrollbar-color: var(--accent) transparent;
         }
         .horizontal-scroll::-webkit-scrollbar {
-            height: 6px;
-        }
-        .horizontal-scroll::-webkit-scrollbar-track {
-            background: transparent;
+            height: 7px;
         }
         .horizontal-scroll::-webkit-scrollbar-thumb {
-            background: var(--border);
-            border-radius: 3px;
+            background: var(--accent);
+            border-radius: 4px;
         }
 
         .screenshot-card {
             flex: 0 0 auto;
-            width: 220px;
+            width: 215px;
             background: #21262d;
             border: 1px solid var(--border);
-            border-radius: 8px;
+            border-radius: 9px;
             overflow: hidden;
-            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .screenshot-card:hover {
+            transform: scale(1.04);
         }
         .screenshot-card img {
             width: 100%;
-            height: 160px;
+            height: 155px;
             object-fit: cover;
             display: block;
-            /* grey placeholder while loading */
             background: #2d333b;
-        }
-        /* Show alt text nicely when image fails */
-        .screenshot-card img::after {
-            content: attr(alt);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            height: 160px;
-            background: #2d333b;
-            color: #8b949e;
-            font-size: 0.8rem;
-            font-style: italic;
-            padding: 0.5rem;
-            box-sizing: border-box;
         }
         .screenshot-card p {
             margin: 0;
-            padding: 0.6rem 0.5rem;
+            padding: 10px 8px;
             font-size: 0.85rem;
             color: #8b949e;
+            text-align: center;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2.5rem 1rem 2rem;
+            color: #8b949e;
+            font-size: 0.92rem;
         }
     </style>
 </head>
 <body>
+
     <header>
-        <div class="logo">🌾</div>
+        <!-- Official Stardew Valley Logo -->
+        <img src="https://www.stickpng.com/assets/images/5f7b2e5f4f8b4f0004d8c8f0.png" 
+             alt="Stardew Valley Logo" 
+             class="logo">
         <h1>Stardew Valley</h1>
         <p class="tagline">v1.6.15.2 • Android • March 2026</p>
     </header>
@@ -200,72 +199,64 @@
         <div class="section">
             <h2>Welcome to Stardew Valley on Android</h2>
             <p>Move to the countryside and build the peaceful farm life of your dreams. Grow crops, raise animals, explore caves, fish, and form friendships in this charming pixel-art world.</p>
-            <p>Fully optimized for touch with auto-save, tool auto-select, and relaxing gameplay.</p>
         </div>
 
         <div class="section">
             <h2>🌟 Key Features</h2>
             <div class="features">
                 <div class="feature">Touch-optimized controls with virtual joystick</div>
-                <div class="feature">1.6 Update: new crops, events, pets &amp; more</div>
+                <div class="feature">Full 1.6 Update — new crops, events & pets</div>
                 <div class="feature">Completely offline gameplay</div>
-                <div class="feature">Auto-save &amp; quick sessions for mobile</div>
-                <div class="feature">Beautiful 4-season pixel art &amp; music</div>
-                <div class="feature">Deep relationships, marriage &amp; family</div>
+                <div class="feature">Auto-save & quick mobile sessions</div>
+                <div class="feature">Stunning 4-season pixel art & music</div>
+                <div class="feature">Deep relationships, marriage & family</div>
+                <div class="feature">Explore dangerous mines & collect treasures</div>
+                <div class="feature">Fishing, cooking, crafting & farming</div>
             </div>
         </div>
 
         <div class="section install-section">
             <h2>📲 Get the Game</h2>
-            <a href="https://play.google.com/store/apps/details?id=com.chucklefish.stardewvalley" target="_blank" class="btn">Official on Google Play</a>
-            <a href="https://drive.google.com/uc?export=download&id=1u9Q8kD-2XDoRFEY_uW06KMqfX4QMmmcG" target="_blank" class="btn">Download (v1.6.15.2) 288 MiB</a>
+            <a href="https://play.google.com/store/apps/details?id=com.chucklefish.stardewvalley" target="_blank" class="btn">Official Google Play</a>
+            <a href="https://drive.google.com/uc?export=download&id=1u9Q8kD-2XDoRFEY_uW06KMqfX4QMmmcG" target="_blank" class="btn">Download APK (288 MiB)</a>
         </div>
 
         <div class="section">
             <div class="screenshots-section">
                 <h3>📸 Game Screenshots</h3>
                 <div class="horizontal-scroll">
-
                     <div class="screenshot-card">
                         <img src="images/Ssdew/One.png" alt="Build a Perfect Home">
                         <p>Build Your Perfect Home</p>
                     </div>
-
                     <div class="screenshot-card">
                         <img src="images/Ssdew/two.png" alt="Explore new Farms">
-                        <p>Settle down and build your own farm</p>
+                        <p>Settle down and build your farm</p>
                     </div>
-
                     <div class="screenshot-card">
                         <img src="images/Ssdew/three.png" alt="Night Market">
                         <p>Night Market Events</p>
                     </div>
-
                     <div class="screenshot-card">
                         <img src="images/Ssdew/Four.png" alt="Feast">
                         <p>Sow the seeds of friendship</p>
                     </div>
-
                     <div class="screenshot-card">
                         <img src="images/Ssdew/Five.png" alt="Make that special someone">
-                        <p>Chose your special partner</p>
+                        <p>Choose your special partner</p>
                     </div>
-
                     <div class="screenshot-card">
                         <img src="images/Ssdew/Six.png" alt="Farm Animals">
                         <p>Raise happy animals</p>
                     </div>
-
                     <div class="screenshot-card">
                         <img src="images/Ssdew/Seven.png" alt="Start a Perfect Family">
                         <p>Start a Family</p>
                     </div>
-
                     <div class="screenshot-card">
                         <img src="images/Ssdew/Eight.png" alt="Venture Into Unknown">
                         <p>Venture into unknown Depths</p>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -273,11 +264,10 @@
         <div class="section">
             <h2>🛠 System Requirements</h2>
             <ul>
-                <li><strong>Android Version:</strong> 5.0 (Lollipop) or higher</li>
+                <li><strong>Android:</strong> 5.0 or higher</li>
                 <li><strong>RAM:</strong> 2 GB minimum (3 GB+ recommended)</li>
-                <li><strong>Storage:</strong> ~400 MB install + extra for saves</li>
-                <li><strong>Processor:</strong> Quad-core or better</li>
-                <li>Internet not required for playing</li>
+                <li><strong>Storage:</strong> \~400 MB</li>
+                <li>Offline • No Ads • No In-App Purchases</li>
             </ul>
         </div>
 
@@ -285,7 +275,7 @@
 
     <footer>
         <p><strong>Stardew Valley</strong> — Created by ConcernedApe • Mobile by Chucklefish</p>
-        <p>Single Player • Offline • No Ads • No In-App Purchases</p>
     </footer>
+
 </body>
 </html>
