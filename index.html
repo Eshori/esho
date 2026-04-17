@@ -1,15 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Eshori</title>
-<meta name="description" content="A simple site existing in the corner of Internet">
-<meta name="keywords" content="Tech, Software, Mods, Apps, Computer,Games, Novels">
-<meta name="author" content="Esho">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Esho • Home</title>
+
+    <!-- Primary SEO -->
+    <title>Esho • Tech, Apps, Mods & Projects</title>
+    <meta name="description" content="Esho's personal website featuring tech projects, Android apps, mods, software tools, and blog posts about computing and gaming.">
+    <meta name="keywords" content="tech, software, android apps, mods, games, computer, blog, projects">
+    <meta name="author" content="Esho">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://eshori.github.io/">
+
+    <!-- Open Graph (Social Sharing) -->
+    <meta property="og:title" content="Esho • Tech & Projects">
+    <meta property="og:description" content="Tech projects, Android mods, and software tools by Esho.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourusername.github.io/">
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#0f1419">
+
     <style>
-        /* Same clean dark style as before */
         :root {
             --bg: #0f1419;
             --card: #161b22;
@@ -17,46 +30,89 @@
             --accent: #58a6ff;
             --border: #30363d;
         }
-        body { margin:0; font-family: system-ui, sans-serif; background:var(--bg); color:var(--text); }
-        header { background:#0a0e14; padding:2rem 1rem; text-align:center; border-bottom:1px solid var(--border); }
+        body {
+            margin:0;
+            font-family: system-ui, sans-serif;
+            background:var(--bg);
+            color:var(--text);
+        }
+        header {
+            background:#0a0e14;
+            padding:2rem 1rem;
+            text-align:center;
+            border-bottom:1px solid var(--border);
+        }
         .nav {
-            display:flex; flex-wrap:wrap; justify-content:center; gap:12px;
-            padding:1.2rem 1rem; background:var(--card); border-bottom:1px solid var(--border);
+            display:flex;
+            flex-wrap:wrap;
+            justify-content:center;
+            gap:12px;
+            padding:1.2rem 1rem;
+            background:var(--card);
+            border-bottom:1px solid var(--border);
         }
         .nav-item {
-            background:#21262d; color:var(--text); padding:10px 22px; border-radius:8px;
-            text-decoration:none; border:1px solid var(--border); transition:0.2s;
+            background:#21262d;
+            color:var(--text);
+            padding:10px 22px;
+            border-radius:8px;
+            text-decoration:none;
+            border:1px solid var(--border);
+            transition:0.2s;
         }
-        .nav-item:hover { background:var(--accent); color:#0d1117; }
-        .container { max-width:880px; margin:2.5rem auto; padding:0 1rem; }
-        .section { background:var(--card); border:1px solid var(--border); border-radius:10px; padding:2rem; margin-bottom:2rem; }
-        footer { text-align:center; padding:3rem 1rem; color:#8b949e; }
+        .nav-item:hover {
+            background:var(--accent);
+            color:#0d1117;
+        }
+        .container {
+            max-width:880px;
+            margin:2.5rem auto;
+            padding:0 1rem;
+        }
+        .section {
+            background:var(--card);
+            border:1px solid var(--border);
+            border-radius:10px;
+            padding:2rem;
+            margin-bottom:2rem;
+        }
+        footer {
+            text-align:center;
+            padding:3rem 1rem;
+            color:#8b949e;
+        }
     </style>
 </head>
+
 <body>
-    <header>
-        <h1>Esho</h1>
-        <p>Self-hosted enthusiast • Tech tinkerer •</p>
-    </header>
 
-    <!-- Category Menu - This will appear on every page -->
-    <div class="nav">
-        <a href="index.html" class="nav-item">🏠 Home</a>
-        <a href="about.html" class="nav-item">👤 About</a>
-        <a href="projects.html" class="nav-item">🌾 Projects</a>
-        <a href="android.html" class="nav-item">📱 Android</a>
-        <a href="blog.html" class="nav-item">📝 Blog</a>
+<header>
+    <h1>Esho</h1>
+    <h2>Tech Projects • Android Mods • Software Tools</h2>
+    <p>Self-hosted enthusiast • Tech tinkerer</p>
+</header>
+
+<div class="nav">
+    <a href="index.html" class="nav-item">🏠 Home</a>
+    <a href="about.html" class="nav-item">👤 About</a>
+    <a href="projects.html" class="nav-item">🌾 Projects</a>
+    <a href="android.html" class="nav-item">📱 Android</a>
+    <a href="blog.html" class="nav-item">📝 Blog</a>
+</div>
+
+<div class="container">
+    <div class="section">
+        <h2>Welcome to my corner of the internet</h2>
+        <p>
+            I build and share tech projects, Android mods, and useful tools.
+            This site is a collection of my work, experiments, and ideas.
+        </p>
     </div>
+</div>
 
-    <div class="container">
-        <div class="section">
-            <h2>Welcome to my corner of the internet</h2>
-            <p>I enjoy modding things, technical services, and keeping things simple.</p>
-        </div>
-    </div>
+<footer>
+    <p>© 2026 Esho</p>
+</footer>
 
-    <footer>
-        <p>© 2026 Esho •</p>
-    </footer>
 </body>
 </html>
