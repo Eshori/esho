@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stardew Valley • Android</title>
+    <style>
+        :root {
+            --bg: #0f1419;
+            --card: #161b22;
+            --text: #c9d1d9;
+            --accent: #58a6ff;
+            --border: #30363d;
+        }
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        header {
+            background: #0a0e14;
+            padding: 1.5rem 1rem;
+            border-bottom: 1px solid var(--border);
+            text-align: center;
+        }
+        .logo {
+            font-size: 2.6rem;
+            margin-bottom: 0.3rem;
+        }
+        h1 {
+            margin: 0;
+            font-size: 1.8rem;
+        }
+        .tagline {
+            color: #8b949e;
+            font-size: 1.1rem;
+        }
+
+        /* Minimalist Category Menu / Folders */
+        .nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            padding: 1.5rem 1rem;
+            background: var(--card);
+            border-bottom: 1px solid var(--border);
+        }
+        .nav-item {
+            background: #21262d;
+            color: var(--text);
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            border: 1px solid var(--border);
+            transition: all 0.2s;
+        }
+        .nav-item:hover {
+            background: var(--accent);
+            color: #0d1117;
+            border-color: var(--accent);
+        }
+
+        .container {
+            max-width: 920px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .section {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.2rem;
+        }
+        .feature {
+            padding: 1rem;
+            background: #21262d;
+            border-radius: 6px;
+            border-left: 4px solid var(--accent);
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--accent);
+            color: #0d1117;
+            padding: 14px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0.5rem 0.3rem;
+            transition: 0.2s;
+        }
+        .btn:hover {
+            background: #7bbcff;
+            transform: translateY(-3px);
+        }
+
+        .install-section {
+            text-align: center;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem;
+            color: #8b949e;
+            font-size: 0.95rem;
+        }
+
+        .screenshot {
+            background: #21262d;
+            height: 380px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #8b949e;
+            font-style: italic;
+            border: 1px dashed var(--border);
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">🌾</div>
+        <h1>Stardew Valley</h1>
+        <p class="tagline">v1.6.15.2 • Android • March 2026</p>
+    </header>
+
+    <!-- Simple Category / Folder Menu -->
+    <div class="nav">
+        <a href="index.html" class="nav-item">🏠 Home</a>
+        <a href="#" class="nav-item">📖 About</a>
+        <a href="#" class="nav-item">⭐ Features</a>
+        <a href="#" class="nav-item">📱 Screenshots</a>
+        <a href="#" class="nav-item">📥 Download APK</a>
+        <a href="#" class="nav-item">⚙️ Requirements</a>
+        <a href="#" class="nav-item">❤️ Tips</a>
+    </div>
+
+    <div class="container">
+
+        <div class="section">
+            <h2>Welcome to Stardew Valley on Android</h2>
+            <p>Move to the countryside and build the peaceful farm life of your dreams. Grow crops, raise animals, explore caves, fish, and form friendships in this charming pixel-art world.</p>
+            <p>Fully optimized for touch with auto-save, tool auto-select, and relaxing gameplay.</p>
+        </div>
+
+        <div class="section">
+            <h2>🌟 Key Features</h2>
+            <div class="features">
+                <div class="feature">Touch-optimized controls with virtual joystick</div>
+                <div class="feature">1.6 Update content (new crops, events, pets &amp; more)</div>
+                <div class="feature">Completely offline gameplay</div>
+                <div class="feature">Auto-save &amp; quick sessions perfect for mobile</div>
+                <div class="feature">Beautiful 4-season pixel art &amp; soothing music</div>
+                <div class="feature">Deep relationships, marriage &amp; family system</div>
+            </div>
+        </div>
+
+        <div class="section install-section">
+            <h2>📲 Get the Game</h2>
+            <a href="https://play.google.com/store/apps/details?id=com.chucklefish.stardewvalley" target="_blank" class="btn">Official on Google Play</a>
+            <a href="#" class="btn">Download Latest APK (v1.6.15.2)</a>
+        </div>
+
+        <div class="section">
+            <h2>📸 Screenshots</h2>
+            <div class="screenshot">Farm View • Pelican Town • Mines • Inventory Screen</div>
+        </div>
+
+        <div class="section">
+            <h2>🛠 System Requirements</h2>
+            <ul>
+                <li><strong>Android Version:</strong> 5.0 (Lollipop) or higher</li>
+                <li><strong>RAM:</strong> 2 GB minimum (3 GB+ recommended)</li>
+                <li><strong>Storage:</strong> \~400 MB install + extra for saves</li>
+                <li><strong>Processor:</strong> Quad-core or better</li>
+                <li>Internet not required for playing</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <footer>
+        <p><strong>Stardew Valley</strong> — Created by ConcernedApe • Mobile by Chucklefish</p>
+        <p>Single Player • Offline • No Ads • No In-App Purchases</p>
+    </footer>
+</body>
+</html>
