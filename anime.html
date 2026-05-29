@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anime Grabber • Video Helper</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #0a0a0f, #1a1428);
+      color: #e0d4ff;
+      margin: 0;
+      padding: 20px;
+      min-height: 100vh;
+    }
+    .container {
+      max-width: 820px;
+      margin: 40px auto;
+      background: rgba(20, 18, 35, 0.95);
+      border-radius: 16px;
+      padding: 35px;
+      box-shadow: 0 15px 40px rgba(100, 50, 255, 0.15);
+      border: 1px solid rgba(150, 100, 255, 0.2);
+    }
+    h1 {
+      text-align: center;
+      background: linear-gradient(90deg, #c026d3, #7e22ce);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 2.4rem;
+      margin-bottom: 8px;
+    }
+    .subtitle {
+      text-align: center;
+      color: #a78bfa;
+      margin-bottom: 30px;
+    }
+    input {
+      width: 100%;
+      padding: 16px 18px;
+      margin: 12px 0;
+      background: #161329;
+      border: 1px solid #5b21b6;
+      border-radius: 10px;
+      color: #e0d4ff;
+      font-size: 16px;
+    }
+    input:focus {
+      outline: none;
+      border-color: #c026d3;
+      box-shadow: 0 0 0 3px rgba(192, 38, 211, 0.2);
+    }
+    button {
+      padding: 14px 28px;
+      background: linear-gradient(90deg, #7e22ce, #c026d3);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: 600;
+      margin-right: 10px;
+      transition: all 0.3s;
+    }
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(192, 38, 211, 0.4);
+    }
+    .steps {
+      background: #161329;
+      padding: 25px;
+      border-radius: 12px;
+      margin: 30px 0;
+      border-left: 5px solid #c026d3;
+    }
+    .step {
+      margin: 16px 0;
+      padding-left: 10px;
+      position: relative;
+    }
+    .step:before {
+      content: "→";
+      color: #c026d3;
+      position: absolute;
+      left: -5px;
+    }
+    #player {
+      margin-top: 25px;
+      border-radius: 12px;
+      overflow: hidden;
+      background: #000;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Anime Grabber</h1>
+      <p class="subtitle">Video Extractor & Downloader Helper</p>
+    </div>
+
+    <input type="text" id="urlInput" placeholder="Paste AnimeOnsen episode link here...">
+    <br>
+    <button onclick="openEpisode()">Open Episode</button>
+
+    <div class="steps">
+      <strong>How to Get Direct Video Link:</strong><br><br>
+      <div class="step">1. Click "Open Episode" and play the video for a few seconds</div>
+      <div class="step">2. Press <strong>F12</strong> → Go to <strong>Network</strong> tab</div>
+      <div class="step">3. In the filter box type: <strong>m3u8</strong></div>
+      <div class="step">4. Right-click the largest .m3u8 file → <strong>Copy link address</strong></div>
+      <div class="step">5. Paste it below</div>
+    </div>
+
+    <input type="text" id="m3u8Input" placeholder="Paste .m3u8 link here">
+    <br><br>
+    <button onclick="playM3U8()">▶ Play Video</button>
+    <button onclick="downloadM3U8()">💾 Get Download Command</button>
+
+    <div id="player"></div>
+  </div>
+
+  <script>
+    function openEpisode() {
+      const url = document.getElementById('urlInput').value.trim();
+      if (url.includes("animeonsen.xyz")) {
+        window.open(url, '_blank');
+      } else {
+        alert("Please paste a valid AnimeOnsen link");
+      }
+    }
+
+    function playM3U8() {
+      const m3u8 = document.getElementById('m3u8Input').value.trim();
+      if (!m3u8) return alert("Please paste the m3u8 link first");
+
+      document.getElementById('player').innerHTML = `
+        <video width="100%" controls autoplay>
+          <source src="${m3u8}" type="application/x-mpegURL">
+          Your browser does not support HLS playback.
+        </video>
+      `;
+    }
+
+    function downloadM3U8() {
+      const m3u8 = document.getElementById('m3u8Input').value.trim();
+      if (!m3u8) return alert("Please paste the m3u8 link first");
+      
+      const cmd = `ffmpeg -i "${m3u8}" -c copy "anime_episode.mp4"`;
+      alert("Run this in Terminal / Command Prompt:\n\n" + cmd + "\n\n(You need ffmpeg installed)");
+    }
+  </script>
+</body>
+</html>
